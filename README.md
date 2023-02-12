@@ -1,11 +1,5 @@
-*Copyright (C) 2022, Axis Communications AB, Lund, Sweden. All Rights Reserved.*
+# A guide to building and running YOLOv5s in an ACAP App
 
-# A guide to building and running OpenCV in an ACAP application
-
-This guide explains how to build OpenCV from source and bundle it for use in an
-ACAP application. The example application runs a background subtraction
-operation on video from the camera for a very simple motion detection
-application to demonstrate how to integrate the broad functionality of OpenCV.
 
 ## File structure
 
@@ -28,11 +22,7 @@ building-opencv
 ### Quick start
 
 > **IMPORTANT**
-> Depending on the network you are connected to, you may need to add proxy
-> settings. The file that needs those settings is ~/.docker/config.json.  For
-> reference go to https://docs.docker.com/network/proxy/ and a [script for
-> Axis device
-> here](../../FAQs.md#how-can-i-set-up-network-proxy-settings-on-the-axis-device).
+> you have to add yolov5s.onnx inside the app folder
 
 1. Standing in your working directory run the following commands:
 
@@ -63,16 +53,6 @@ building-opencv
    the camera and running `journalctl -f`. The printout shows whether the
    application has detected movement in the image or not:
 
-   ```sh
-   opencv_app[0]: starting opencv_app
-   opencv_app[2211]: Running OpenCV example with VDO as video source
-   opencv_app[2211]: Creating VDO image provider and creating stream 1024 x 576
-   opencv_app[2211]: Dump of vdo stream settings map =====
-   opencv_app[2211]: chooseStreamResolution: We select stream w/h=1024 x 576 based on VDO channel info.
-   opencv_app[2211]: Start fetching video frames from VDO
-   opencv_app[2211]: Motion detected: YES
-   opencv_app[2211]: Motion detected: YES
-   ```
 
 ### Walk-through of application
 
